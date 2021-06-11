@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
+    kotlin("plugin.serialization") version "1.5.10"
     id("com.android.library")
 }
 
@@ -31,6 +32,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation("dev.gitlive:firebase-firestore:1.3.1")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1")
             }
         }
         val commonTest by getting {
