@@ -22,7 +22,8 @@ class MainActivity : AppCompatActivity() {
         tv.text = greet()
 
         lifecycleScope.launch {
-            MyFirestoreClient().addPost(Post(0xdeadbeef))
+            MyFirestoreClient().addPost(Post(System.currentTimeMillis()))
+            MyFirestoreClient().getAllPosts()
         }
     }
 }

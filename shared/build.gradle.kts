@@ -34,6 +34,13 @@ kotlin {
             dependencies {
                 implementation("dev.gitlive:firebase-firestore:1.3.1")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1")
+
+//                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2-native-mt") {
+                    version {
+                        strictly("1.4.2-native-mt")
+                    }
+                }
             }
         }
         val commonTest by getting {
