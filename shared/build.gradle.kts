@@ -5,6 +5,7 @@ plugins {
     kotlin("native.cocoapods")
     kotlin("plugin.serialization") version "1.5.10"
     id("com.android.library")
+    id("com.google.gms.google-services")
 }
 
 version = "1.0"
