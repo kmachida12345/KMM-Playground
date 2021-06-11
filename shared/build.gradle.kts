@@ -28,7 +28,11 @@ kotlin {
     }
     
     sourceSets {
-        val commonMain by getting
+        val commonMain by getting {
+            dependencies {
+                implementation("dev.gitlive:firebase-firestore:1.3.1")
+            }
+        }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test-common"))
