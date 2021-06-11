@@ -4,6 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.github.kmachida12345.kmm_playground.Greeting
 import android.widget.TextView
+import androidx.lifecycle.lifecycleScope
+import com.github.kmachida12345.kmm_playground.MyFirestoreClient
+import com.github.kmachida12345.kmm_playground.Post
+import kotlinx.coroutines.launch
 
 fun greet(): String {
     return Greeting().greeting()
@@ -16,5 +20,9 @@ class MainActivity : AppCompatActivity() {
 
         val tv: TextView = findViewById(R.id.text_view)
         tv.text = greet()
+
+        lifecycleScope.launch {
+            MyFirestoreClient().addPost(Post(0xdeadbeef))
+        }
     }
 }
